@@ -1,9 +1,17 @@
 import React from 'react';
-import { Animated, Dimensions, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+	Animated,
+	Image,
+	ScrollView,
+	StyleSheet,
+	Text,
+	useWindowDimensions,
+	View
+} from 'react-native';
 import { SharedElement } from 'react-native-shared-element';
 
-export default function Scene2( { ancestor, node, state } ) {
-	const windowHeight = Dimensions.get( 'window' ).height;
+export default function Scene2( { ancestor, node, progress, scale, position, panResponder } ) {
+	const windowHeight = useWindowDimensions().height;
 	
 	return <View style={ [ StyleSheet.absoluteFill, {
 		backgroundColor: 'white',
@@ -11,9 +19,9 @@ export default function Scene2( { ancestor, node, state } ) {
 	} ] } ref={ ancestor }>
 		<Animated.View
 			style={ [ {
-				transform: [ { scale: state.scale } ]
-			}, state.position.getLayout() ] }>
-			<View { ...state.panResponder.panHandlers }>
+				transform: [ { scale } ]
+			}, position.getLayout() ] }>
+			<View { ...panResponder.panHandlers }>
 				<SharedElement onNode={ node }>
 					<Image style={ {
 						resizeMode: 'cover',
@@ -24,7 +32,7 @@ export default function Scene2( { ancestor, node, state } ) {
 				</SharedElement>
 			</View>
 			<Animated.View style={ {
-				opacity: state.progress.interpolate( {
+				opacity: progress.interpolate( {
 					inputRange:  [ .6, 1 ],
 					outputRange: [ 0, 1 ]
 				} )
