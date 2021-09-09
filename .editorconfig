@@ -1,0 +1,9 @@
+[*]
+charset = utf-8
+indent_size = 3
+indent_style = tab
+insert_final_newline = true
+max_line_length = 120
+tab_width = 3
+ij_continuation_indent_size = 3
+ij_smart_tabs = true
