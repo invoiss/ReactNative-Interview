@@ -2,7 +2,7 @@
 
 <h1 align='center'>Welcome to Invoiss React-Native Technical Interview</h1>
 
-## This Project is running with expo so setting it up is extremely simple  
+## This project is running with expo so setting it up is extremely simple  
 
 ### Make sure your environment is set up correctly according to the [React Native Docs](https://reactnative.dev/docs/environment-setup) and [Expo Docs](https://docs.expo.dev/get-started/installation/) before you attend the interview question  
 
@@ -69,10 +69,11 @@ expo start
 
 # Task C: Global BottomSheetModal Provider
 
-**Create this feature in the "Tab 3" Screen of the boilerplate App.**
+**Call the provider in the "Tab 3" Screen of the boilerplate App.**
 
-- Providers are good way to eliminate prop drilling and here we have an idea of a BottomSheet provider. It will allow us to call the BottomSheet without having to create refs in each file and instead call the provider and use the bottomSheet anywhere.
+- Providers are a good way to eliminate prop drilling and here we have an idea of a BottomSheet provider. It will allow us to call the BottomSheet without having to create refs in each file and instead call the provider and use the bottomSheet anywhere.
 - Refer to this [Bottom Sheet Modal Library](https://gorhom.github.io/react-native-bottom-sheet/modal/)
+
 - Once you are done creating the provider an example way to use the provider would be like the following:
   
 ```JSX
@@ -84,18 +85,21 @@ export default function App() {
 
 	return (
 		<Button
-		onPress={ () => bottomSheet( {
-			render( modal ) {
-				return <BottomSheetContent />;
-			},
-			snapPoints: [ '50%', '70%' ]
-		} ) }>
-		Show Modal
-	</Button>
+			onPress={ () => bottomSheet( {
+				render( modal ) {
+					return <BottomSheetContent />;
+				},
+				snapPoints: [ '50%', '70%' ]
+			} ) }>
+			Show Modal
+		</Button>
 	)
 }
 ```
 
+**Put the provider it self in the /providers/bottomSheetProvider.tsx file**
+
+<p align="center">-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</p>
 - ### Please keep in mind that, we love to encourage our developers to seek google and the online dev community for answers and help. But these tasks above are what we expect from a developer to do on their own when hired with us for this react native role.
 
 <div align="center">
