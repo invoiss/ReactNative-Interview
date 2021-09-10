@@ -100,6 +100,7 @@ export default function App() {
 </br>
 
 <p align="center">-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</p>
+
 - ### Please keep in mind that, we love to encourage our developers to seek google and the online dev community for answers and help. But these tasks above are what we expect from a developer to do on their own when hired with us for this react native role.
 
 <div align="center">
